@@ -47,5 +47,6 @@ class ACLServiceProvider extends ServiceProvider
     public function register()
     {
         $this->app->register(Providers\LoginEventServiceProvider::class);
+        $this->app['router']->aliasMiddleware('check.permissions', \Westsoft\Acl\Middleware\CheckPermissions::class);
     }
 }
