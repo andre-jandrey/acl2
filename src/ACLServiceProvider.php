@@ -32,7 +32,7 @@ class ACLServiceProvider extends ServiceProvider
         ]);
 
         $this->publishes([
-            __DIR__.'/public' => base_path('public/'),
+            __DIR__.'/public' => base_path('public/acl/'),
         ]);
 
         $this->loadRoutesFrom(__DIR__.'/routes/web.php');
