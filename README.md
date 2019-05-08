@@ -1,11 +1,11 @@
-<h1>Permissões WestSoftware</h1>
+<h1>Permissões WestSoftware 2.1</h1>
 
 #Execute: 
 
 php artisan vendor:publish 
 
 
-#Atualização para versão 2.0
+#Atualização para versão 2.1
 
 #Mudanças:
     -Automatizado registro da middleare => check.permissions
