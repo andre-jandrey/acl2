@@ -23,10 +23,6 @@ class ACLServiceProvider extends ServiceProvider
             __DIR__.'/migrations' => database_path('migrations/'),
         ]);
 
-        /* $this->publishes([
-            __DIR__.'/Listeners' => base_path('app/Listeners/'),
-        ]); */
-
         $this->publishes([
             __DIR__.'/Providers' => base_path('app/Providers/'),
         ]);
