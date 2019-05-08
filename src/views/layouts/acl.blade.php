@@ -12,24 +12,24 @@
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i%7CQuicksand:300,400,500,700" rel="stylesheet">
 
     <!-- BEGIN VENDOR CSS-->
-    <link rel="stylesheet" type="text/css" href="{{ asset('app-assets/css/vendors.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('acl/css/vendors.css') }}">
     <!-- END VENDOR CSS-->
 
     <!-- BEGIN MODERN CSS-->
-    <link rel="stylesheet" type="text/css" href="{{ asset('app-assets/css/app.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('acl/css/app.css') }}">
     <!-- END MODERN CSS-->
 
     <!-- BEGIN Page Level CSS-->
-	<link rel="stylesheet" type="text/css" href="{{ asset('app-assets/css/core/colors/palette-gradient.css') }}">
-    <link rel="stylesheet" type="text/css" href="{{ asset('app-assets/css/core/menu/menu-types/vertical-menu-modern.css') }}">
+	<link rel="stylesheet" type="text/css" href="{{ asset('acl/css/core/colors/palette-gradient.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('acl/css/core/menu/menu-types/vertical-menu-modern.css') }}">
 
-	<link rel="stylesheet" type="text/css" href="{{ asset('app-assets/fonts/line-awesome/css/line-awesome.min.css') }}">
-	<link rel="stylesheet" type="text/css" href="{{ asset('app-assets/fonts/simple-line-icons/style.min.css') }}">
-	<link rel="stylesheet" type="text/css" href="{{ asset('app-assets/fonts/feather/style.css') }}">
+	<link rel="stylesheet" type="text/css" href="{{ asset('acl/fonts/line-awesome/css/line-awesome.min.css') }}">
+	<link rel="stylesheet" type="text/css" href="{{ asset('acl/fonts/simple-line-icons/style.min.css') }}">
+	<link rel="stylesheet" type="text/css" href="{{ asset('acl/fonts/feather/style.css') }}">
     <!-- END Page Level CSS-->
 
     <!-- BEGIN Custom CSS-->
-    <link rel="stylesheet" type="text/css" href="{{ asset('css/style.css') }}">
+    <!-- <link rel="stylesheet" type="text/css" href="{{ asset('css/style.css') }}">-->
     <!-- END Custom CSS-->
     <!-- END Page Level CSS-->
 
