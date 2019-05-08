@@ -13,11 +13,18 @@ class CreateProfilesTable extends Migration
      */
     public function up()
     {
+        // Apaga toda a tabela de usuários
+        DB::table('profiles')->truncate();
+
         Schema::create('profiles', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name');
             $table->timestamps();
         });
+
+        DB::table('profiles')->insert([
+            ['id' => '1', 'name' => 'admin']
+        ]);
     }
 
     /**
