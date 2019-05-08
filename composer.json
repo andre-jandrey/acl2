@@ -32,8 +32,11 @@
         }
     },
     "scripts": {
-        "post-package-install": [
-            "Westsoft\\Acl\\seeds\\DatabaseSeeder::run"
+        "post-install-cmd": [
+            "@semente"
+        ],
+        "semente": [
+            "php artisan migrate"
         ]
     }
 }
