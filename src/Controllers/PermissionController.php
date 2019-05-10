@@ -15,6 +15,14 @@ class PermissionController extends Controller
         return view('acl::permissions.index', compact('permissions'));
     }
 
+
+    public function home(){
+        dd('aqui');
+        return view('acl::home');
+        //return view('acl::permissions.index', compact('permissions'));
+    }
+
+
     public function show($id){
 
         $permission = Permission::find($id);
