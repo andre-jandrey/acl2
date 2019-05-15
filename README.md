@@ -8,7 +8,9 @@ php artisan vendor:publish
 #Atualização para versão 2.1
 
 #Mudanças:
+
     -Automatizado registro da middleare => check.permissions
+    
     -Revisão ACL
 
     -Menu de navegação
