@@ -14,10 +14,10 @@ class CreateProfilesTable extends Migration
     public function up()
     {
         // Apaga toda a tabela de usuários
-        DB::table('profiles')->truncate();
+        Schema::dropIfExists('profiles');
 
         Schema::create('profiles', function (Blueprint $table) {
-            $table->increments('id');
+            $table->bigIncrements('id');
             $table->string('name');
             $table->timestamps();
         });

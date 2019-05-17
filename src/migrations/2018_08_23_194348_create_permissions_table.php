@@ -14,10 +14,10 @@ class CreatePermissionsTable extends Migration
     public function up()
     {
         // Apaga toda a tabela 
-        DB::table('permissions')->truncate();
+        Schema::dropIfExists('permissions');
 
         Schema::create('permissions', function (Blueprint $table) {
-            $table->increments('id');
+            $table->bigIncrements('id');
             $table->string('name',150);
             $table->string('description');
             $table->timestamps();

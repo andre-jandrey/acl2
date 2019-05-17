@@ -14,14 +14,17 @@ class CreateProfilePermissionsTable extends Migration
     public function up()
     {
         // Apaga toda a tabela 
-        DB::table('user_profiles')->truncate();
+        Schema::dropIfExists('profile_permissions');
         
         Schema::create('profile_permissions', function (Blueprint $table) {
-            $table->integer('permissions_id')->unsigned();
-            $table->foreign('permissions_id')->references('id')->on('permissions')->onDelete('cascade');
-            $table->integer('profiles_id')->unsigned();
-            $table->foreign('profiles_id')->references('id')->on('profiles')->onDelete('cascade');
+            $table->unsignedBigInteger('permissions_id');
+            $table->unsignedBigInteger('profiles_id');
             $table->timestamps();
+        });
+
+        Schema::table('profile_permissions', function (Blueprint $table) {
+            $table->foreign('permissions_id')->references('id')->on('permissions');
+            $table->foreign('profiles_id')->references('id')->on('profiles');
         });
 
         DB::table('profile_permissions')->insert([

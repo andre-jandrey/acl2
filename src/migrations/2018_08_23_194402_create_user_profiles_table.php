@@ -14,22 +14,29 @@ class CreateUserProfilesTable extends Migration
     public function up()
     {
         // Apaga toda a tabela 
-        DB::table('user_profiles')->truncate();
+        Schema::dropIfExists('user_profiles');
 
         Schema::create('user_profiles', function (Blueprint $table) {
-            $table->integer('user_id')->unsigned();
-            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
-            $table->integer('profiles_id')->unsigned();
-            $table->foreign('profiles_id')->references('id')->on('profiles')->onDelete('cascade');
+            $table->unsignedBigInteger('user_id');
+            
+            $table->unsignedBigInteger('profiles_id');
+           
             $table->timestamps();
         });
 
+        Schema::table('user_profiles', function (Blueprint $table) {
+            $table->foreign('user_id')->references('id')->on('users');
+            $table->foreign('profiles_id')->references('id')->on('profiles');
+        });
+
+
+
         DB::table('users')->insert([
-            ['id' => '1', 'name' => 'admin', 'email' => 'admin@westsoftware.com.br','password' => bcrypt('kibras2435*')],
+            ['id' => '1', 'user'=>'admin', 'name' => 'admin', 'email' => 'admin@westsoftware.com.br','password' => bcrypt('kibras2435*')],
         ]);
         
         DB::table('user_profiles')->insert([
-            ['users_id' => '1', 'profiles_id' => '1'],
+            ['user_id' => '1', 'profiles_id' => '1'],
         ]);
     }
 
