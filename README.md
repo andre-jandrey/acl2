@@ -1,11 +1,11 @@
-<h1>Permissões WestSoftware 2.1</h1>
+<h1>Permissões WestSoftware 2.2</h1>
 
 #Execute: 
 
 php artisan vendor:publish 
 
 
-#Atualização para versão 2.1
+#Atualização para versão 2.2
 
 #Mudanças:
 
