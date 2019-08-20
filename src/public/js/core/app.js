@@ -3,7 +3,7 @@
   Description: Template related app JS.
   ----------------------------------------------------------------------------------------
   Item Name: Modern Admin - Clean Bootstrap 4 Dashboard HTML Template
-  Version: 1.0
+ Version: 3.0
   Author: Pixinvent
   Author URL: hhttp://www.themeforest.net/user/pixinvent
 ==========================================================================================*/
@@ -92,7 +92,7 @@
         $('a[data-action="collapse"]').on('click',function(e){
             e.preventDefault();
             $(this).closest('.card').children('.card-content').collapse('toggle');
-            $(this).closest('.card').find('[data-action="collapse"] i').toggleClass('ft-minus ft-plus');
+            $(this).closest('.card').find('[data-action="collapse"] i').toggleClass('ft-plus ft-minus');
 
         });
 
@@ -105,8 +105,8 @@
 
         //  Notifications & messages scrollable
         if($('.scrollable-container').length > 0){
-            $('.scrollable-container').perfectScrollbar({
-                theme:"dark"
+            $('.scrollable-container').each(function(){
+                var scrollable_container = new PerfectScrollbar($(this)[0]); 
             });
         }
 
@@ -213,9 +213,73 @@
         });
     });
 
+    // Hide overlay menu on content overlay click on small screens
+    $(document).on('click', '.sidenav-overlay', function(e) {
+        // Hide menu
+        $.app.menu.hide();
+        return false;
+    });
+
+    // Execute below code only if we find hammer js for touch swipe feature on small screen
+    if(typeof Hammer !== 'undefined'){
+
+        // Swipe menu gesture
+        var swipeInElement = document.querySelector('.drag-target');
+
+        if( $(swipeInElement).length > 0 ){
+            var swipeInMenu = new Hammer(swipeInElement);
+
+            swipeInMenu.on("panright", function(ev) {
+                if( $body.hasClass('vertical-overlay-menu') ){
+                    $.app.menu.open();
+                    return false;
+                }
+            });
+        }
+
+        // menu swipe out gesture
+        setTimeout(function(){
+            var swipeOutElement = document.querySelector('.main-menu');
+            var swipeOutMenu;
+
+            if( $(swipeOutElement).length > 0 ){
+                swipeOutMenu = new Hammer(swipeOutElement);    
+            
+                swipeOutMenu.get('pan').set({ direction: Hammer.DIRECTION_ALL, threshold: 100 });
+
+                swipeOutMenu.on("panleft", function(ev) {
+                    if( $body.hasClass('vertical-overlay-menu') ){
+                        $.app.menu.hide();
+                        return false;
+                    }
+                });
+            }
+        }, 300);
+
+        // menu overlay swipe out gestrue
+        var swipeOutOverlayElement = document.querySelector('.sidenav-overlay');
+
+        if( $(swipeOutOverlayElement).length > 0 ){
+
+            var swipeOutOverlayMenu = new Hammer(swipeOutOverlayElement);
+
+            swipeOutOverlayMenu.on("panleft", function(ev) {
+                if( $body.hasClass('vertical-overlay-menu') ){
+                    $.app.menu.hide();
+                    return false;
+                }
+            });
+        }
+    }
 
     $(document).on('click', '.menu-toggle, .modern-nav-toggle', function(e) {
         e.preventDefault();
+
+        // Hide dropdown of user profile section for material templates
+        if($('.user-profile .user-info .dropdown').hasClass('show')){
+            $('.user-profile .user-info .dropdown').removeClass('show');
+            $('.user-profile .user-info .dropdown .dropdown-menu').removeClass('show');
+        }
 
         // Toggle menu
         $.app.menu.toggle();
@@ -235,24 +299,16 @@
             },1000);
         }
 
+        // Hides dropdown on click of menu toggle
+        // $('[data-toggle="dropdown"]').dropdown('hide');
+        
+        // Hides collapse dropdown on click of menu toggle
+        if($('.vertical-overlay-menu .navbar-with-menu .navbar-container .navbar-collapse').hasClass('show')){
+            $('.vertical-overlay-menu .navbar-with-menu .navbar-container .navbar-collapse').removeClass('show');
+        }
+
         return false;
     });
-
-    /*$('.modern-nav-toggle').on('click',function(){
-        var $this = $(this),
-        icon = $this.find('.toggle-icon').attr('data-ticon');
-
-        if(icon == 'ft-toggle-right'){
-            $this.find('.toggle-icon').attr('data-ticon','ft-toggle-left')
-            .removeClass('ft-toggle-right').addClass('ft-toggle-left');
-        }
-        else{
-            $this.find('.toggle-icon').attr('data-ticon','ft-toggle-right')
-            .removeClass('ft-toggle-left').addClass('ft-toggle-right');
-        }
-
-        $.app.menu.toggle();
-    });*/
 
     $(document).on('click', '.open-navbar-container', function(e) {
 
@@ -320,19 +376,6 @@
     // Update manual scroller when window is resized
     $(window).resize(function() {
         $.app.menu.manualScroller.updateHeight();
-    });
-
-    // TODO : Tabs dropdown fix, remove this code once fixed in bootstrap 4.
-    $('.nav.nav-tabs a.dropdown-item').on('click',function(){
-        var $this = $(this),
-        href = $this.attr('href');
-        var tabs = $this.closest('.nav');
-        tabs.find('.nav-link').removeClass('active');
-        $this.closest('.nav-item').find('.nav-link').addClass('active');
-        $this.closest('.dropdown-menu').find('.dropdown-item').removeClass('active');
-        $this.addClass('active');
-        tabs.next().find(href).siblings('.tab-pane').removeClass('active in').attr('aria-expanded',false);
-        $(href).addClass('active in').attr('aria-expanded','true');
     });
 
     $('#sidebar-page-navigation').on('click', 'a.nav-link', function(e){

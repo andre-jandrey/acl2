@@ -1,8 +1,17 @@
-<h1>Permissões WestSoftware 2.2</h1>
+<h1>Permissões WestSoftware 2.3</h1>
 
 #Execute: 
 
 php artisan vendor:publish 
+
+
+#Atualização para versão 2.3
+
+#Mudanças:
+    - Remoção de assets não utilizados
+    - Correção de textos de botões
+    - Correção de rota acl.home para acl.index
+    - Ordenando usuários pelo nome
 
 
 #Atualização para versão 2.2

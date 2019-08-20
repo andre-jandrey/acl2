@@ -1,6 +1,6 @@
 @extends('westsoft.acl.layouts.acl')
 
-@section('title', 'Criar permissão')
+@section('title', 'Criar permissões do perfil')
 
 @section('css')
     <style>

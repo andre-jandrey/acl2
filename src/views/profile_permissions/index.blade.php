@@ -8,7 +8,7 @@
 
 @section('content-header')
 <div class="content-header-left col-md-6 col-12 mb-2">
-<h3 class="content-header-title">Permissões <a class="btn btn-success text-bold-600" href="{{ route('profile_permissions.create')}}">Adicionar Permissões</a> </h3>
+<h3 class="content-header-title">Permissões do perfil<a class="btn btn-success text-bold-600" href="{{ route('profile_permissions.create')}}">Adicionar Permissões para o perfil</a> </h3>
     <div class="row breadcrumbs-top">
         <div class="breadcrumb-wrapper col-12">
             <ol class="breadcrumb">

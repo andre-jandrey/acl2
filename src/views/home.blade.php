@@ -15,7 +15,7 @@
 
 <div class="content-header-left col-md-12 col-12 mb-2">
 
-    <div style="background: url('acl/images/avatar.png') no-repeat center center; min-height: 500px; width:100%"></div>
+    <div style="background: url('app-assets/images/avatar.png') no-repeat center center; min-height: 500px; width:100%"></div>
 
 </div>
 

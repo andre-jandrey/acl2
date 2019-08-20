@@ -8,7 +8,7 @@ use App\Models\User;
 class UserController extends Controller
 {
     public function index(){
-        $users = User::all();
+        $users = User::orderBy('name')->get();
 
         return view('acl::users.index', compact('users'));
     }

@@ -12,7 +12,7 @@
     <div class="col-xl-8 col-12">
         <div class="card px-2">
             <div class="card-header">
-                {{-- <h4 class="card-title">{{isset($permission) ? 'Editar permission' : 'Nova permission' }}</h4> --}}
+                {{-- <h4 class="card-title">{{isset($permission) ? 'Editar permissão' : 'Nova permissão' }}</h4> --}}
                 <a class="heading-elements-toggle"><i class="la la-ellipsis-v font-medium-3"></i></a>
             </div>
             <div class="card-content collapse show">
