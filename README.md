@@ -12,7 +12,7 @@ php artisan vendor:publish
     - Correção de textos de botões
     - Correção de rota acl.home para acl.index
     - Ordenando usuários pelo nome
-
+    - Correção criar permissões por rotas (estava duplicando)
 
 #Atualização para versão 2.2
 
