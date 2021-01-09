@@ -1,6 +1,6 @@
 @extends('westsoft.acl.layouts.acl')
 
-@section('title', 'Adicionar perfil ao usuário')
+@section('title', 'Criar permissão')
 
 @section('css')
 
@@ -12,7 +12,7 @@
     <div class="col-xl-8 col-12">
         <div class="card px-2">
             <div class="card-header">
-                {{-- <h4 class="card-title">{{isset($permission) ? 'Editar perfil do usuário' : 'Adicionar perfil ao usuário' }}</h4> --}}
+                {{-- <h4 class="card-title">{{isset($permission) ? 'Editar permission' : 'Nova permission' }}</h4> --}}
                 <a class="heading-elements-toggle"><i class="la la-ellipsis-v font-medium-3"></i></a>
             </div>
             <div class="card-content collapse show">
@@ -39,9 +39,9 @@
         <div class="form-group row">
             <div class="col-md-12">
             <label>Usuário</label>
-            <select name="user_id" class="form-control select2">
+            <select name="user_id" class="form-control">
                 @foreach ($users as $user)
-                    <option value="{{ $user->id }}">{{ $user->name }} - {{ $user->email }}</option>"
+                    <option value="{{ $user->id }}">{{ $user->name }}</option>"
                 @endforeach
             </select>
         </div>

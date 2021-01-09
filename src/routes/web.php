@@ -14,6 +14,5 @@ Route::group(['middleware' => ['web', 'check.permissions'], 'namespace' => 'West
     Route::get('acl', 'AclController@index')->name('acl.index');
     Route::get('permissions/filter', 'PermissionController@filter')->name('permissions.filter');
     Route::get('permissions_by_route', 'PermissionController@permissionByRoute')->name('permissions.createByRoute');
-    Route::get('permissions_by_profile/{id}', 'ProfilePermissionsController@profilePermissions')->name('profile.permissions');
 });
 

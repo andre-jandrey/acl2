@@ -33,7 +33,7 @@ class UserProfilesController extends Controller
     public function create(){
 
         $profiles = Profile::all();
-        $users    = User::orderBy('name')->get();
+        $users    = User::all();
         return view('acl::user_profiles.create-edit', compact('users', 'profiles'));
     }
 

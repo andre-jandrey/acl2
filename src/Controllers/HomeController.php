@@ -28,7 +28,7 @@ class HomeController extends Controller
      */
     public function index(Request $request)
     {
-        //dd('home');
+        dd('home');
         /**
          *  Pega o Id do usuário logado no momento,
          *  só chegara neste método se estiver logado protegido

@@ -6,4 +6,8 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
+    'CreatePermissionsTable' => $baseDir . '/src/migrations/2018_08_23_194348_create_permissions_table.php',
+    'CreateProfilePermissionsTable' => $baseDir . '/src/migrations/2018_08_23_194416_create_profile_permissions__table.php',
+    'CreateProfilesTable' => $baseDir . '/src/migrations/2018_08_23_194335_create_profiles_table.php',
+    'CreateUserProfilesTable' => $baseDir . '/src/migrations/2018_08_23_194402_create_user_profiles_table.php',
 );

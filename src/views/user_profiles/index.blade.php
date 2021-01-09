@@ -1,6 +1,6 @@
 @extends('westsoft.acl.layouts.acl')
 
-@section('title', 'Perfis do usuário')
+@section('title', 'Perfis')
 
 @section('css')
 <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css">
@@ -9,7 +9,7 @@
 @section('content-header')
 <div class="content-header-left col-md-6 col-12 mb-2">
     <h3 class="content-header-title">Perfis <a class="btn btn-success text-bold-600"
-            href="{{ route('user_profiles.create')}}">Adicionar perfil ao usuário</a> </h3>
+            href="{{ route('user_profiles.create')}}">Criar Perfil</a> </h3>
     <div class="row breadcrumbs-top">
         <div class="breadcrumb-wrapper col-12">
             <ol class="breadcrumb">

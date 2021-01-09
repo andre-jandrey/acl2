@@ -2,7 +2,6 @@
 
 namespace Westsoft\Acl\Controllers;
 
-use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -29,6 +28,7 @@ class AclController extends Controller
      */
     public function index(Request $request)
     {
-        return view('acl::home');
+        dd('aqui');
+        return view('acl::permissions.index');
     }
 }

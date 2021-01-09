@@ -156,11 +156,19 @@ class ComposerStaticInit75e729f35a45735b1243498b4326f26d
         ),
     );
 
+    public static $classMap = array (
+        'CreatePermissionsTable' => __DIR__ . '/../..' . '/src/migrations/2018_08_23_194348_create_permissions_table.php',
+        'CreateProfilePermissionsTable' => __DIR__ . '/../..' . '/src/migrations/2018_08_23_194416_create_profile_permissions__table.php',
+        'CreateProfilesTable' => __DIR__ . '/../..' . '/src/migrations/2018_08_23_194335_create_profiles_table.php',
+        'CreateUserProfilesTable' => __DIR__ . '/../..' . '/src/migrations/2018_08_23_194402_create_user_profiles_table.php',
+    );
+
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
             $loader->prefixLengthsPsr4 = ComposerStaticInit75e729f35a45735b1243498b4326f26d::$prefixLengthsPsr4;
             $loader->prefixDirsPsr4 = ComposerStaticInit75e729f35a45735b1243498b4326f26d::$prefixDirsPsr4;
+            $loader->classMap = ComposerStaticInit75e729f35a45735b1243498b4326f26d::$classMap;
 
         }, null, ClassLoader::class);
     }

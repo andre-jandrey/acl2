@@ -34,14 +34,6 @@ class ProfilePermissionsController extends Controller
         return view('acl::profile_permissions.create-edit', compact('profiles', 'permissions'));
     }
 
-    public function profilePermissions($id){
-        $permissions = ProfilePermissions::where('profiles_id', $id)->get();
-
-        return response()->json([
-            'permissions' => $permissions
-        ]);
-    }
-    
     public function edit($id){
 
         $profile_permission = ProfilePermissions::find($id);

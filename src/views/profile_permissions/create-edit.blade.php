@@ -1,6 +1,6 @@
 @extends('westsoft.acl.layouts.acl')
 
-@section('title', 'Criar permissões do perfil')
+@section('title', 'Criar permissão')
 
 @section('css')
     <style>
@@ -50,7 +50,7 @@
                                 <div class="form-group row">
                                     <div class="col-md-12">
                                         <label>Selecione o perfil</label>
-                                        <select name="profiles_id" id="profile" class="form-control">
+                                        <select name="profiles_id" class="form-control">
                                             @foreach ($profiles as $profile)
                                             <option value="{{ $profile->id }}">{{ $profile->name }}</option>
                                             @endforeach
@@ -67,7 +67,7 @@
                                                     $categoria = substr($permission->name, 0, strpos($permission->name, '.'));
                                                     echo "<input type=\"checkbox\" name=\"$categoria\"  value=\"$categoria\" class='categoria' onclick='marcardesmarcar(\"$categoria\")'><strong>Selecionar todos de  $categoria</strong> <br>";
                                                 }
-                                                echo "<input type='checkbox' id='permission_id_$permission->id' name='permissions_id[]' class='subcategoria $categoria' value='$permission->id'>$permission->description<br>";
+                                                echo "<input type='checkbox' name='permissions_id[]' class='subcategoria $categoria' value='$permission->id'>$permission->description<br>";
                                             }
                                         @endphp
                                     </div>
@@ -94,36 +94,7 @@
 
 
 @section('js')
-<script
-  src="https://code.jquery.com/jquery-3.4.1.min.js"
-  integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
-  crossorigin="anonymous"></script>
 <script>
-  $(document).ready(function(){
-    
-    $('#profile').change(function(){
-        var profile_id = $(this).val();
-
-        $.ajax({
-            type: "GET",
-            dataType: 'JSON',
-            url: '/permissions_by_profile/'+profile_id,
-            success: function(data)
-            {
-                data.permissions.forEach(element => {
-                    console.log(element.permissions_id);
-                    $("#permission_id_"+element.permissions_id).attr("checked", true);       
-                });
-                //console.log(data);
-            },
-            error: function(json)
-            {
-                console.log(json);
-            }
-        });
-    });
-});
-
     function marcardesmarcar(classe){
         $('.'+classe).each(
             function(){

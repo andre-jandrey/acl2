@@ -29,7 +29,7 @@
     <!-- END Page Level CSS-->
 
     <!-- BEGIN Custom CSS-->
-    <!-- <link rel="stylesheet" type="text/css" href="{{ asset('css/style.css') }}">-->
+    <link rel="stylesheet" type="text/css" href="{{ asset('css/style.css') }}">
     <!-- END Custom CSS-->
     <!-- END Page Level CSS-->
 
@@ -49,7 +49,7 @@
 			<div class="navbar-header">
 				<ul class="nav navbar-nav flex-row position-relative">
 					<li class="nav-item mobile-menu d-md-none mr-auto"><a class="nav-link nav-menu-main menu-toggle hidden-xs" href="#"><i class="ft-menu font-large-1"></i></a></li>
-					<li class="nav-item mr-auto"><a class="navbar-brand" href="{{ route('acl.index') }}">
+					<li class="nav-item mr-auto"><a class="navbar-brand" href="{{ route('home') }}">
 						<h3 class="brand-text">WestSoftware - ACL</h3></a>
 					</li>
 					<li class="nav-item d-none d-md-block nav-toggle"><a class="nav-link modern-nav-toggle pr-0" data-toggle="collapse"><i class="toggle-icon ft-toggle-right font-medium-3 white" data-ticon="ft-toggle-right"></i></a></li>
@@ -65,7 +65,7 @@
 
 					<ul class="nav navbar-nav float-right">
 						<li class="dropdown dropdown-user nav-item">
-						<a class="dropdown-toggle nav-link dropdown-user-link" href="#" data-toggle="dropdown"><span class="mr-1">Olá,<span class="user-name text-bold-700"> {{ Auth::user()->name }}</span></span><span class="avatar"><img src="{{asset('app-assets/images/avatar.png')}}" alt="avatar"></span></a>
+						<a class="dropdown-toggle nav-link dropdown-user-link" href="#" data-toggle="dropdown"><span class="mr-1">Olá,<span class="user-name text-bold-700"> {{ Auth::user()->name }}</span></span><span class="avatar"><img src="{{asset('acl/images/avatar.png')}}" alt="avatar"></span></a>
 							<div class="dropdown-menu dropdown-menu-right">
 								{{-- <a class="dropdown-item" href="#"><i class="ft-user"></i> Edit Profile</a>
 								<a class="dropdown-item" href="#"><i class="ft-mail"></i> My Inbox</a>
@@ -140,21 +140,21 @@
 	</footer>
 
 	<!-- BEGIN VENDOR JS-->
-	<script src="{{ asset('app-assets/js/core/libraries/jquery.min.js') }}"></script>
-	<script src="{{ asset('app-assets/vendors/js/ui/popper.min.js') }}"></script>
-	<script src="{{ asset('app-assets/js/core/libraries/bootstrap.min.js') }}"></script>
-	<script src="{{ asset('app-assets/vendors/js/ui/perfect-scrollbar.jquery.min.js') }}"></script>
-	<script src="{{ asset('app-assets/vendors/js/ui/unison.min.js') }}"></script>
-	<script src="{{ asset('app-assets/vendors/js/ui/blockUI.min.js') }}"></script>
-	<script src="{{ asset('app-assets/vendors/js/ui/jquery-sliding-menu.js') }}"></script>
+	<script src="{{ asset('acl/js/core/libraries/jquery.min.js') }}"></script>
+	<script src="{{ asset('acl/vendors/js/ui/popper.min.js') }}"></script>
+	<script src="{{ asset('acl/js/core/libraries/bootstrap.min.js') }}"></script>
+	<script src="{{ asset('acl/vendors/js/ui/perfect-scrollbar.jquery.min.js') }}"></script>
+	<script src="{{ asset('acl/vendors/js/ui/unison.min.js') }}"></script>
+	<script src="{{ asset('acl/vendors/js/ui/blockUI.min.js') }}"></script>
+	<script src="{{ asset('acl/vendors/js/ui/jquery-sliding-menu.js') }}"></script>
 	<!-- BEGIN VENDOR JS-->
 	
 	<!-- BEGIN PAGE VENDOR JS-->
 	<!-- END PAGE VENDOR JS-->
 	
 	<!-- BEGIN MODERN JS-->
-	<script src="{{ asset('app-assets/js/core/app-menu.js') }}"></script>
-	<script src="{{ asset('app-assets/js/core/app.js') }}"></script>
+	<script src="{{ asset('acl/js/core/app-menu.js') }}"></script>
+	<script src="{{ asset('acl/js/core/app.js') }}"></script>
 	<!-- END MODERN JS-->
 	
 	<!-- BEGIN PAGE LEVEL JS-->
