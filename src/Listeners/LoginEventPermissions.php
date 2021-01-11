@@ -24,7 +24,7 @@ class LoginEventPermissions
         /**
          *  Busca todos os profiles que estão relacionados com o usuário logado
          */
-        $profiles_user = UserProfiles::where('user_id', '=', $id)->get();
+        $profiles_user = UserProfiles::where('users_id', '=', $id)->get();
         
         $permissions = array();
         /**
